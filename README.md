@@ -1,4 +1,16 @@
- Enterprise-Secure-NetworkMonitoring-System
+## Project Topology
+
+![Network Topology](TOPOLOGY.png)
+
+## VLAN Verification
+
+![VLAN Verification](VLAN%20VERIFICATION.png)
+
+## Connectivity Validation
+
+![Connectivity Validation](CONNECTIVITY%20VALIDATION.png) 
+
+Enterprise-Secure-NetworkMonitoring-System
  
 
  Project Overview
