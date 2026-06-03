@@ -1,19 +1,6 @@
-## Project Topology
+# Enterprise Secure Network Monitoring System
 
-![Network Topology](TOPOLOGY.png)
-
-## VLAN Verification
-
-![VLAN Verification](VLAN%20VERIFICATION.png)
-
-## Connectivity Validation
-
-![Connectivity Validation](CONNECTIVITY%20VALIDATION.png) 
-
-Enterprise-Secure-NetworkMonitoring-System
- 
-
- Project Overview
+## Project Overview
 
 This project demonstrates the design and implementation of an enterprise network infrastructure using Cisco Packet Tracer.
 
@@ -21,8 +8,7 @@ The network is segmented into multiple departments using VLANs and interconnecte
 
 ---
 
- Network Architecture
- Departments
+## Network Architecture
 
 | Department | VLAN    | Network Address | Gateway      |
 | ---------- | ------- | --------------- | ------------ |
@@ -33,7 +19,9 @@ The network is segmented into multiple departments using VLANs and interconnecte
 
 ---
 
- Features Implemented
+## Phase 1 - Enterprise Network Design
+
+### Features Implemented
 
 * VLAN Segmentation
 * Inter-VLAN Routing (Router-on-a-Stick)
@@ -41,65 +29,105 @@ The network is segmented into multiple departments using VLANs and interconnecte
 * File Server Integration
 * Network Printer Connectivity
 * Static IP Addressing
-* Connectivity Validation using ICMP
-* Enterprise Network Design
+* Connectivity Validation
 
+### Project Screenshots
 
- Devices Used
+#### Network Topology
 
-* Cisco 2911 Router
-* Cisco 2960 Switch
-* File Server
-* Network Printer
-* Access Point
-* Desktop PCs
-* Laptop
-* Smartphone
+![Topology](TOPOLOGY.png)
 
+#### VLAN Verification
 
+![VLAN Verification](VLAN-VERIFICATION.png)
 
- Validation Performed
+#### Connectivity Validation
 
-Successful communication was verified between:
+![Connectivity Validation](CONNECTIVITY-VALIDATION.png)
 
-* IT ↔ HR
-* Finance ↔ IT
-* IT ↔ Guest Network
-* File Server ↔ IT
+---
 
-This confirms proper VLAN configuration and inter-VLAN routing functionality.
+## Phase 2 - DHCP and Security Implementation
 
+### DHCP Configuration
 
+Configured the Cisco Router as a DHCP Server and created DHCP pools for:
 
- Technologies Used
+* HR VLAN (10)
+* IT VLAN (20)
+* Finance VLAN (30)
+* Guest VLAN (40)
+
+End devices automatically receive:
+
+* IP Address
+* Subnet Mask
+* Default Gateway
+
+### Access Control Lists (ACLs)
+
+Implemented Extended ACLs to isolate the Guest Network from internal enterprise resources.
+
+### Security Policies
+
+| Source               | Destination        | Action |
+| -------------------- | ------------------ | ------ |
+| Guest VLAN           | HR VLAN            | Deny   |
+| Guest VLAN           | IT VLAN            | Deny   |
+| Guest VLAN           | Finance VLAN       | Deny   |
+| Guest VLAN           | File Server        | Deny   |
+| Internal Departments | Internal Resources | Allow  |
+
+### ACL Configuration
+
+![ACL Configuration](ACL-CONFIGURATION.png)
+
+### Security Validation
+
+Guest devices were unable to access internal enterprise resources while departmental communication remained operational.
+
+![Security Validation](SECURITY-VALIDATION.png)
+
+---
+
+## Technologies Used
 
 * Cisco Packet Tracer
 * VLAN Configuration
 * Router-on-a-Stick
-* Switching
-* Routing
-* IP Addressing
-* Network Troubleshooting
+* DHCP
+* Extended ACLs
+* Routing and Switching
+* Network Security
 
+---
 
- Skills Demonstrated
+## Skills Demonstrated
 
 * Enterprise Network Design
-* Network Segmentation
-* VLAN Implementation
+* VLAN Segmentation
 * Inter-VLAN Routing
-* Wireless Network Configuration
-* Connectivity Testing
-* Network Documentation
+* DHCP Configuration
+* Access Control Lists
+* Network Security
+* Network Troubleshooting
+* Technical Documentation
 
+---
 
+## Future Enhancements
 
- Future Enhancements
+### Phase 3
 
-Phase 2 will include:
-
-* Access Control Lists (ACLs)
-* Security Policy Enforcement
-* Simulated Attack Detection
 * Security Monitoring
-* Firewall-Based Restrictions
+* Attack Simulation
+* Security Incident Report
+* Traffic Analysis
+
+### Phase 4
+
+* Multi-Branch Enterprise Network
+* OSPF Dynamic Routing
+* WAN Connectivity
+* Enterprise Expansion
+
