@@ -26,8 +26,8 @@ The network is segmented into multiple departments using VLANs and interconnecte
 
 | Department | VLAN    | Network Address | Gateway      |
 | ---------- | ------- | --------------- | ------------ |
-| IT         | VLAN 10 | 192.168.10.0/24 | 192.168.10.1 |
-| HR         | VLAN 20 | 192.168.20.0/24 | 192.168.20.1 |
+| HR         | VLAN 10 | 192.168.10.0/24 | 192.168.10.1 |
+| IT         | VLAN 20 | 192.168.20.0/24 | 192.168.20.1 |
 | Finance    | VLAN 30 | 192.168.30.0/24 | 192.168.30.1 |
 | Guest      | VLAN 40 | 192.168.40.0/24 | 192.168.40.1 |
 
