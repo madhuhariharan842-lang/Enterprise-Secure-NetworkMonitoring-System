@@ -2,9 +2,9 @@
 
 ## Project Overview
 
-This project demonstrates the design and implementation of an enterprise network infrastructure using Cisco Packet Tracer.
+This project demonstrates the design and implementation of a secure enterprise network infrastructure using Cisco Packet Tracer.
 
-The network is segmented into multiple departments using VLANs and interconnected through Router-on-a-Stick inter-VLAN routing. Security controls such as DHCP and Extended ACLs have been implemented to simulate a real-world enterprise environment.
+The network is segmented into multiple departments using VLANs and interconnected through Router-on-a-Stick inter-VLAN routing. Security controls such as DHCP and Extended Access Control Lists (ACLs) have been implemented to protect internal resources and simulate real-world enterprise security practices.
 
 ---
 
@@ -24,10 +24,11 @@ The network is segmented into multiple departments using VLANs and interconnecte
 ## Features Implemented
 
 * VLAN Segmentation
-* Inter-VLAN Routing (Router-on-a-Stick)
+* Router-on-a-Stick Inter-VLAN Routing
 * Wireless Guest Network
 * File Server Integration
-* Network Printer Connectivity
+* Network Printer Integration
+* Department-Based Network Segmentation
 * Connectivity Validation
 
 ---
@@ -40,11 +41,15 @@ The network is segmented into multiple departments using VLANs and interconnecte
 
 ## VLAN Verification
 
+Verified proper VLAN creation and port assignments.
+
 ![VLAN Verification](VLAN-VERIFICATION.png)
 
 ---
 
 ## Connectivity Validation
+
+Validated successful communication between authorized departments and resources.
 
 ![Connectivity Validation](CONNECTIVITY-VALIDATION.png)
 
@@ -54,7 +59,7 @@ The network is segmented into multiple departments using VLANs and interconnecte
 
 ## DHCP Configuration
 
-The Cisco Router was configured as a DHCP Server to automatically assign IP addresses to all VLANs.
+Configured the Cisco Router as a DHCP Server to automate IP address allocation across all VLANs.
 
 ### DHCP Pools Created
 
@@ -63,17 +68,18 @@ The Cisco Router was configured as a DHCP Server to automatically assign IP addr
 * Finance VLAN (30)
 * Guest VLAN (40)
 
-### DHCP Benefits
+### Benefits
 
 * Automatic IP Address Assignment
 * Centralized Network Management
-* Reduced Configuration Errors
+* Reduced Administrative Overhead
+* Improved Scalability
 
 ---
 
 ## Access Control Lists (ACLs)
 
-Extended ACLs were implemented to isolate the Guest Network from internal enterprise resources.
+Implemented Extended ACLs to isolate the Guest Network from internal enterprise resources.
 
 ### Security Policies
 
@@ -95,7 +101,7 @@ Extended ACLs were implemented to isolate the Guest Network from internal enterp
 
 ## Security Validation
 
-Guest devices were unable to access internal enterprise resources while authorized departmental communication remained operational.
+Verified that Guest VLAN devices cannot access internal enterprise resources.
 
 ![Security Validation](SECURITY-VALIDATION.png)
 
@@ -105,60 +111,60 @@ Guest devices were unable to access internal enterprise resources while authoriz
 
 ## Objective
 
-Validate that implemented security controls prevent unauthorized access while maintaining normal business operations.
+Validate the effectiveness of implemented security controls through simulated unauthorized access attempts.
 
 ---
-## Security Validation
-
-### Unauthorized Access Attempt
-
-![Security Validation](SECURITY-VALIDATION.png)
-
-### ACL Enforcement
-
-![ACL Configuration](ACL-CONFIGURATION.png)
-
 
 ## Attack Simulation
 
-Simulated unauthorized access attempts from the Guest VLAN to protected enterprise resources.
+Simulated multiple unauthorized access attempts from the Guest VLAN to protected enterprise resources.
 
-### Test Results
+### Attack Simulation Evidence
 
-| Source               | Destination        | Result  |
-| -------------------- | ------------------ | ------- |
-| Guest VLAN           | HR VLAN            | Blocked |
-| Guest VLAN           | IT VLAN            | Blocked |
-| Guest VLAN           | Finance VLAN       | Blocked |
-| Guest VLAN           | File Server        | Blocked |
-| Internal Departments | Internal Resources | Allowed |
+![Attack Simulation](ATTACK-SIMULATION.png)
 
 ---
 
-## Security Monitoring Summary
+## Security Monitoring Results
 
-The implemented ACL policies successfully prevented unauthorized access attempts while maintaining communication between legitimate business departments.
+The Guest VLAN attempted to access:
 
-### Security Events Observed
+* HR Department
+* IT Department
+* Finance Department
+* File Server
 
-* Unauthorized Guest Access Attempt → Blocked
-* Guest to File Server Access Attempt → Blocked
-* Internal Department Communication → Allowed
+All access attempts were successfully blocked by Extended ACL policies.
+
+---
+
+## Authorized Access Verification
+
+Verified that legitimate internal communication remained operational after ACL implementation.
+
+![Authorized Access](AUTHORIZED-ACCESS.png)
+
+---
+
+## Security Validation Summary
+
+| Source             | Destination        | Result  |
+| ------------------ | ------------------ | ------- |
+| Guest VLAN         | HR VLAN            | Blocked |
+| Guest VLAN         | IT VLAN            | Blocked |
+| Guest VLAN         | Finance VLAN       | Blocked |
+| Guest VLAN         | File Server        | Blocked |
+| IT Department      | Internal Resources | Allowed |
+| HR Department      | Internal Resources | Allowed |
+| Finance Department | Internal Resources | Allowed |
 
 ---
 
 ## Conclusion
 
-The Enterprise Secure Network Monitoring System successfully demonstrates:
+The implemented security controls successfully protected enterprise resources from unauthorized guest access while maintaining normal business communication between internal departments.
 
-* Enterprise VLAN Segmentation
-* Router-on-a-Stick Inter-VLAN Routing
-* DHCP Automation
-* Extended ACL Security Controls
-* Guest Network Isolation
-* Security Monitoring
-* Attack Simulation
-* Security Validation
+The project demonstrates practical implementation of network segmentation, access control, and security validation techniques commonly used in enterprise environments.
 
 ---
 
@@ -166,44 +172,45 @@ The Enterprise Secure Network Monitoring System successfully demonstrates:
 
 * Cisco Packet Tracer
 * VLAN Configuration
-* Inter-VLAN Routing
 * Router-on-a-Stick
+* Inter-VLAN Routing
 * DHCP
 * Extended ACLs
+* Wireless Networking
 * Network Security
-* Switching and Routing
+* Routing and Switching
 
 ---
 
 # Skills Demonstrated
 
-* Enterprise Network Design
+### Networking
+
 * VLAN Segmentation
+* Switching
+* Trunking
 * Inter-VLAN Routing
 * DHCP Configuration
+* IP Addressing
+
+### Cybersecurity
+
 * Access Control Lists (ACLs)
-* Security Monitoring
-* Network Troubleshooting
+* Network Isolation
 * Security Validation
+* Attack Simulation
+* Security Monitoring
+
+### Professional Skills
+
+* Network Troubleshooting
 * Technical Documentation
+* Security Analysis
+* Infrastructure Design
 
 ---
 
-# Future Enhancements
-
-## Phase 4 - Enterprise Expansion
-
-Planned enhancements:
-
-* Multi-Branch Enterprise Network
-* OSPF Dynamic Routing
-* WAN Connectivity
-* Branch Office Integration
-* Advanced Network Monitoring
-
----
-
-## Repository Contents
+# Repository Contents
 
 * Enterprise-Network-Design.pkt
 * TOPOLOGY.png
@@ -211,13 +218,28 @@ Planned enhancements:
 * CONNECTIVITY-VALIDATION.png
 * ACL-CONFIGURATION.png
 * SECURITY-VALIDATION.png
-* README.md
+* ATTACK-SIMULATION.png
+* AUTHORIZED-ACCESS.png
 
 ---
 
-### Author
+# Future Enhancements
+
+## Phase 4 - Enterprise Expansion
+
+Planned Improvements:
+
+* Multi-Branch Enterprise Network
+* OSPF Dynamic Routing
+* WAN Connectivity
+* Branch Office Integration
+* Advanced Monitoring Solutions
+
+---
+
+## Author
 
 Madhu Hariharan
 
-Enterprise Networking & Cybersecurity Learning Project
+Enterprise Networking & Cybersecurity Project
 
