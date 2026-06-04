@@ -108,6 +108,16 @@ Guest devices were unable to access internal enterprise resources while authoriz
 Validate that implemented security controls prevent unauthorized access while maintaining normal business operations.
 
 ---
+## Security Validation
+
+### Unauthorized Access Attempt
+
+![Security Validation](SECURITY-VALIDATION.png)
+
+### ACL Enforcement
+
+![ACL Configuration](ACL-CONFIGURATION.png)
+
 
 ## Attack Simulation
 
