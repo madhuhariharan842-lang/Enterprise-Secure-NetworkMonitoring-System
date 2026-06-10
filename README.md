@@ -1,245 +1,173 @@
-# Enterprise Secure Network Monitoring System
+# Enterprise Secure Multi-Branch Network Monitoring System
 
-## Project Overview
+## Overview
 
-This project demonstrates the design and implementation of a secure enterprise network infrastructure using Cisco Packet Tracer.
+This project simulates a real-world Enterprise Secure Multi-Branch Network using Cisco Packet Tracer. The network consists of a Headquarters (HQ) and a Remote Branch Office connected through a WAN link using OSPF dynamic routing.
 
-The network is segmented into multiple departments using VLANs and interconnected through Router-on-a-Stick inter-VLAN routing. Security controls such as DHCP and Extended Access Control Lists (ACLs) have been implemented to protect internal resources and simulate real-world enterprise security practices.
-
----
-
-# Network Architecture
-
-| Department | VLAN    | Network Address | Gateway      |
-| ---------- | ------- | --------------- | ------------ |
-| HR         | VLAN 10 | 192.168.10.0/24 | 192.168.10.1 |
-| IT         | VLAN 20 | 192.168.20.0/24 | 192.168.20.1 |
-| Finance    | VLAN 30 | 192.168.30.0/24 | 192.168.30.1 |
-| Guest      | VLAN 40 | 192.168.40.0/24 | 192.168.40.1 |
+The implementation includes VLAN segmentation, Inter-VLAN routing, DHCP services, Extended ACL security, Guest Network Isolation, File Server integration, Network Printer access, and OSPF-based branch connectivity.
 
 ---
 
-# Phase 1 - Enterprise Network Design
+## Features
 
-## Features Implemented
-
-* VLAN Segmentation
-* Router-on-a-Stick Inter-VLAN Routing
-* Wireless Guest Network
-* File Server Integration
-* Network Printer Integration
-* Department-Based Network Segmentation
-* Connectivity Validation
-
----
-
-## Network Topology
-
-![Network Topology](TOPOLOGY.png)
+- VLAN Segmentation
+- Inter-VLAN Routing (Router-on-a-Stick)
+- DHCP Configuration
+- Extended ACL Security
+- Guest Network Isolation
+- OSPF Dynamic Routing
+- Multi-Branch Architecture
+- File Server Integration
+- Network Printer Integration
+- Connectivity Validation
 
 ---
 
-## VLAN Verification
+# Network Topology
 
-Verified proper VLAN creation and port assignments.
-
-![VLAN Verification](VLAN-VERIFICATION.png)
+![Network Topology](01-TOPOLOGY.png.png)
 
 ---
 
-## Connectivity Validation
+# VLAN Segmentation
 
-Validated successful communication between authorized departments and resources.
+## Headquarters VLAN Configuration
 
-![Connectivity Validation](CONNECTIVITY-VALIDATION.png)
+| VLAN | Department | Network |
+|------|------------|----------|
+| 10 | HR | 192.168.10.0/24 |
+| 20 | IT | 192.168.20.0/24 |
+| 30 | Finance | 192.168.30.0/24 |
+| 40 | Guest | 192.168.40.0/24 |
 
----
-
-# Phase 2 - DHCP and Security Implementation
-
-## DHCP Configuration
-
-Configured the Cisco Router as a DHCP Server to automate IP address allocation across all VLANs.
-
-### DHCP Pools Created
-
-* HR VLAN (10)
-* IT VLAN (20)
-* Finance VLAN (30)
-* Guest VLAN (40)
-
-### Benefits
-
-* Automatic IP Address Assignment
-* Centralized Network Management
-* Reduced Administrative Overhead
-* Improved Scalability
+![HQ VLAN Verification](02-VLAN-VERIFICATION-HQ.png.png)
 
 ---
 
-## Access Control Lists (ACLs)
+## Branch VLAN Configuration
 
-Implemented Extended ACLs to isolate the Guest Network from internal enterprise resources.
+| VLAN | Department | Network |
+|------|------------|----------|
+| 50 | Branch HR | 192.168.50.0/24 |
+| 60 | Branch IT | 192.168.60.0/24 |
 
-### Security Policies
-
-| Source               | Destination        | Action |
-| -------------------- | ------------------ | ------ |
-| Guest VLAN           | HR VLAN            | Deny   |
-| Guest VLAN           | IT VLAN            | Deny   |
-| Guest VLAN           | Finance VLAN       | Deny   |
-| Guest VLAN           | File Server        | Deny   |
-| Internal Departments | Internal Resources | Allow  |
+![Branch VLAN Verification](03-VLAN-VERIFICATION-BRANCH.png.png)
 
 ---
 
-## ACL Configuration
+# DHCP Validation
 
-![ACL Configuration](ACL-CONFIGURATION.png)
+Automatic IP assignment verification.
 
----
-
-## Security Validation
-
-Verified that Guest VLAN devices cannot access internal enterprise resources.
-
-![Security Validation](SECURITY-VALIDATION.png)
+![DHCP Validation](04-DHCP-HR-PC.png.png)
 
 ---
 
-# Phase 3 - Security Monitoring and Attack Simulation
+# Branch Office Configuration
 
-## Objective
+Branch HR device configuration.
 
-Validate the effectiveness of implemented security controls through simulated unauthorized access attempts.
-
----
-
-## Attack Simulation
-
-Simulated multiple unauthorized access attempts from the Guest VLAN to protected enterprise resources.
-
-### Attack Simulation Evidence
-
-![Attack Simulation](ATTACK-SIMULATION.png)
+![Branch Configuration](05-BRANCH-HR-CONFIGURATION.png.png)
 
 ---
 
-## Security Monitoring Results
+# ACL Security Configuration
 
-The Guest VLAN attempted to access:
+## HQ Router ACL
 
-* HR Department
-* IT Department
-* Finance Department
-* File Server
+Guest users are blocked from accessing internal departments.
 
-All access attempts were successfully blocked by Extended ACL policies.
+![HQ ACL](06-ACL-HQ-ROUTER.png.png)
 
----
+## Branch Router ACL
 
-## Authorized Access Verification
+Branch office access restrictions.
 
-Verified that legitimate internal communication remained operational after ACL implementation.
-
-![Authorized Access](AUTHORIZED-ACCESS.png)
+![Branch ACL](07-ACL-BRANCH-ROUTER.png.png)
 
 ---
 
-## Security Validation Summary
+# Security Validation
 
-| Source             | Destination        | Result  |
-| ------------------ | ------------------ | ------- |
-| Guest VLAN         | HR VLAN            | Blocked |
-| Guest VLAN         | IT VLAN            | Blocked |
-| Guest VLAN         | Finance VLAN       | Blocked |
-| Guest VLAN         | File Server        | Blocked |
-| IT Department      | Internal Resources | Allowed |
-| HR Department      | Internal Resources | Allowed |
-| Finance Department | Internal Resources | Allowed |
+Guest network isolation testing.
+
+![Security Validation](08-SECURITY-VALIDATION.png.png)
 
 ---
 
-## Conclusion
+# OSPF Dynamic Routing
 
-The implemented security controls successfully protected enterprise resources from unauthorized guest access while maintaining normal business communication between internal departments.
+## OSPF Neighbor Relationship
 
-The project demonstrates practical implementation of network segmentation, access control, and security validation techniques commonly used in enterprise environments.
+Successful OSPF adjacency between HQ and Branch routers.
+
+![OSPF Neighbor](09-OSPF-NEIGHBOR.png.png)
+
+---
+
+## HQ Routing Table
+
+HQ learns Branch networks dynamically.
+
+![OSPF Routes HQ](10-OSPF-ROUTES-HQ.png.png)
+
+---
+
+## Branch Routing Table
+
+Branch learns HQ networks dynamically.
+
+![OSPF Routes Branch](11-OSPF-ROUTES-BRANCH.png.png)
+
+---
+
+# Connectivity Validation
+
+Successful communication across enterprise and branch networks.
+
+![Connectivity Validation](12-CONNECTIVITY-VALIDATION.png.png)
 
 ---
 
 # Technologies Used
 
-* Cisco Packet Tracer
-* VLAN Configuration
-* Router-on-a-Stick
-* Inter-VLAN Routing
-* DHCP
-* Extended ACLs
-* Wireless Networking
-* Network Security
-* Routing and Switching
+- Cisco Packet Tracer
+- VLAN Segmentation
+- Router-on-a-Stick
+- DHCP
+- Extended ACLs
+- OSPF Routing
+- Network Security
+- WAN Connectivity
 
 ---
 
 # Skills Demonstrated
 
-### Networking
-
-* VLAN Segmentation
-* Switching
-* Trunking
-* Inter-VLAN Routing
-* DHCP Configuration
-* IP Addressing
-
-### Cybersecurity
-
-* Access Control Lists (ACLs)
-* Network Isolation
-* Security Validation
-* Attack Simulation
-* Security Monitoring
-
-### Professional Skills
-
-* Network Troubleshooting
-* Technical Documentation
-* Security Analysis
-* Infrastructure Design
+- Enterprise Network Design
+- Routing & Switching
+- VLAN Implementation
+- DHCP Deployment
+- ACL Configuration
+- OSPF Routing
+- Network Security
+- Troubleshooting
+- Documentation
 
 ---
 
-# Repository Contents
+# Project File
 
-* Enterprise-Network-Design.pkt
-* TOPOLOGY.png
-* VLAN-VERIFICATION.png
-* CONNECTIVITY-VALIDATION.png
-* ACL-CONFIGURATION.png
-* SECURITY-VALIDATION.png
-* ATTACK-SIMULATION.png
-* AUTHORIZED-ACCESS.png
+Packet Tracer Simulation:
+
+**Enterprise-Secure-Network-Design.pkt**
 
 ---
 
-# Future Enhancements
+# Author
 
-## Phase 4 - Enterprise Expansion
+**Madhu Hariharan M**
 
-Planned Improvements:
-
-* Multi-Branch Enterprise Network
-* OSPF Dynamic Routing
-* WAN Connectivity
-* Branch Office Integration
-* Advanced Monitoring Solutions
-
----
-
-## Author
-
-Madhu Hariharan
-
+Enterprise Networking & Cybersecurity Enthusiast
 Enterprise Networking & Cybersecurity Project
 
