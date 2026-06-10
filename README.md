@@ -25,7 +25,7 @@ The implementation includes VLAN segmentation, Inter-VLAN routing, DHCP services
 
 # Network Topology
 
-![Network Topology](01-TOPOLOGY.png.png)
+![Network Topology](01-TOPOLOGY.png)
 
 ---
 
@@ -40,7 +40,7 @@ The implementation includes VLAN segmentation, Inter-VLAN routing, DHCP services
 | 30 | Finance | 192.168.30.0/24 |
 | 40 | Guest | 192.168.40.0/24 |
 
-![HQ VLAN Verification](02-VLAN-VERIFICATION-HQ.png.png)
+![HQ VLAN Verification](02-VLAN-VERIFICATION-HQ.png)
 
 ---
 
@@ -51,7 +51,7 @@ The implementation includes VLAN segmentation, Inter-VLAN routing, DHCP services
 | 50 | Branch HR | 192.168.50.0/24 |
 | 60 | Branch IT | 192.168.60.0/24 |
 
-![Branch VLAN Verification](03-VLAN-VERIFICATION-BRANCH.png.png)
+![Branch VLAN Verification](03-VLAN-VERIFICATION-BRANCH.png)
 
 ---
 
@@ -59,7 +59,7 @@ The implementation includes VLAN segmentation, Inter-VLAN routing, DHCP services
 
 Automatic IP assignment verification.
 
-![DHCP Validation](04-DHCP-HR-PC.png.png)
+![DHCP Validation](04-DHCP-HR-PC.png)
 
 ---
 
@@ -67,7 +67,7 @@ Automatic IP assignment verification.
 
 Branch HR device configuration.
 
-![Branch Configuration](05-BRANCH-HR-CONFIGURATION.png.png)
+![Branch Configuration](05-BRANCH-HR-CONFIGURATION.png)
 
 ---
 
@@ -77,13 +77,13 @@ Branch HR device configuration.
 
 Guest users are blocked from accessing internal departments.
 
-![HQ ACL](06-ACL-HQ-ROUTER.png.png)
+![HQ ACL](06-ACL-HQ-ROUTER.png)
 
 ## Branch Router ACL
 
 Branch office access restrictions.
 
-![Branch ACL](07-ACL-BRANCH-ROUTER.png.png)
+![Branch ACL](07-ACL-BRANCH-ROUTER.png)
 
 ---
 
@@ -91,7 +91,7 @@ Branch office access restrictions.
 
 Guest network isolation testing.
 
-![Security Validation](08-SECURITY-VALIDATION.png.png)
+![Security Validation](08-SECURITY-VALIDATION.png)
 
 ---
 
@@ -101,7 +101,7 @@ Guest network isolation testing.
 
 Successful OSPF adjacency between HQ and Branch routers.
 
-![OSPF Neighbor](09-OSPF-NEIGHBOR.png.png)
+![OSPF Neighbor](09-OSPF-NEIGHBOR.png)
 
 ---
 
@@ -109,7 +109,7 @@ Successful OSPF adjacency between HQ and Branch routers.
 
 HQ learns Branch networks dynamically.
 
-![OSPF Routes HQ](10-OSPF-ROUTES-HQ.png.png)
+![OSPF Routes HQ](10-OSPF-ROUTES-HQ.png)
 
 ---
 
@@ -117,7 +117,7 @@ HQ learns Branch networks dynamically.
 
 Branch learns HQ networks dynamically.
 
-![OSPF Routes Branch](11-OSPF-ROUTES-BRANCH.png.png)
+![OSPF Routes Branch](11-OSPF-ROUTES-BRANCH.png)
 
 ---
 
@@ -125,7 +125,7 @@ Branch learns HQ networks dynamically.
 
 Successful communication across enterprise and branch networks.
 
-![Connectivity Validation](12-CONNECTIVITY-VALIDATION.png.png)
+![Connectivity Validation](12-CONNECTIVITY-VALIDATION.png)
 
 ---
 
